@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/layout}">
+<head>
+<meta charset="UTF-8">
+<title th:text="${title}"></title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<h1>やりたいことリスト</h1>
+		<ul>
+			<li>サンプル1</li>
+			<li>サンプル2</li>
+			<li>サンプル3</li>
+		</ul>
+	</div>
+</body>
+</html>

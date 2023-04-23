@@ -8,11 +8,17 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
-public class ToppageController {
+public class MyWishIndexController {
 
 	@GetMapping("/")
 	public String Toppage(Model model) {
 		model.addAttribute("title", "やりたいことリスト");
 		return "contents/contents";
+	}
+	
+	@GetMapping("/index")
+	public String goToIndexPage(Model model) {
+		model.addAttribute("title", "やりたいことリスト");
+		return "contents/index";
 	}
 }
