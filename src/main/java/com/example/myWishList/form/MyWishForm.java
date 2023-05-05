@@ -11,6 +11,9 @@ public class MyWishForm {
 	
 	@NotBlank
 	@Size(min=1, max=255)
-	private String MyWishContent;
+	private String myWishContent;
 	
+	public MyWishForm(String myWishContent) {
+		this.myWishContent = myWishContent;
+	}
 }

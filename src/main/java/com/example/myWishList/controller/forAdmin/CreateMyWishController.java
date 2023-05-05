@@ -15,15 +15,18 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Controller
 public class CreateMyWishController {
+	
+	//フィールドにDAO定義
 
 	@GetMapping("/newMyWish")
 	public String goToCreateMyWishPage(MyWishForm myWishForm, Model model) {
+		model.addAttribute("myWishForm", myWishForm);
 		return "contents/mywish/new";
 	}
 	
-	@PostMapping("createMyWish")
-	public String createMyWish(@Validated MyWishForm myWishForm, Model model,
-			BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+	@PostMapping("/createMyWish")
+	public String createMyWish(@Validated MyWishForm myWishForm, BindingResult bindingResult, Model model,
+			 RedirectAttributes redirectAttributes) {
 		
 			if(bindingResult.hasErrors()) {
 				model.addAttribute("myWishForm", myWishForm);

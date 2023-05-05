@@ -4,3 +4,11 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: marumaru39
+
+  thymeleaf:
+    mode: "HTML"
+  messages:
+    basename: i18n/messages_ja, i18n/ValidationMessages_ja
+    encoding: "UTF-8"
+    fallback-to-system-locale: false
+    

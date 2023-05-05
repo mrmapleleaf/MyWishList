@@ -8,10 +8,12 @@
 </head>
 <body>
 	<div layout:fragment="content">
-		<form>
+		<form method="POST" th:action="@{/createMyWish}" th:object="${myWishForm}">
 			<label>なにやりたい？</label><br>
-			<textarea rows="5" cols="30">
-			</textarea>
+			<textarea rows="5" cols="30" th:errorclass="is-invalid" th:field="*{myWishContent}">
+			</textarea><br>
+			<div id="validation_error_message"  th:errors="*{*}"></div>
+			<input type="submit" value="登録">
 		</form>
 	</div>
 </body>
