@@ -9,11 +9,17 @@
 <body>
 	<div layout:fragment="content">
 		<h1>やりたいことリスト</h1>
-		<ul>
-			<li>サンプル1</li>
-			<li>サンプル2</li>
-			<li>サンプル3</li>
-		</ul>
+		<th:block th:if="${!#strings.isEmpty(registeredMessage)}">
+			<h2 th:text="${registeredMessage}"></h2>
+		</th:block>
+		<th:block th:if="${myWishList != null && !#lists.isEmpty(myWishList)}">
+			<ul th:inline="text" th:each="myWish : ${myWishList}">
+				<li>[[${myWish.myWishContent}]]</li>
+			</ul>
+		</th:block>
+		<th:block th:if="${myWishList == null || #lists.isEmpty(myWishList)}">
+			<h2>やりたいことが登録されていません</h2>
+		</th:block>
 	</div>
 </body>
 </html>
